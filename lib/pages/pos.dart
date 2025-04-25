@@ -143,19 +143,19 @@ class _PosScreenState extends State<PosScreen> {
                                     ),
                                   ),
                                   SizedBox(
-                                    height: 43,
-                                    child: Container(
-                                      margin: EdgeInsets.only(top: 4),
-                                      child: Center(
-                                        child: Text("Search to add to Cart",
-                                        style: TextStyle(
-                                          fontSize: 30,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black45
-                                        ),),
-                                      ),
-                                    )
-                                  ),
+                                      height: 43,
+                                      child: Container(
+                                        margin: EdgeInsets.only(top: 4),
+                                        child: Center(
+                                          child: Text(
+                                            "Search to add to Cart",
+                                            style: TextStyle(
+                                                fontSize: 30,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.black45),
+                                          ),
+                                        ),
+                                      )),
                                   SizedBox(
                                     height: 80,
                                     child: Row(
@@ -225,8 +225,7 @@ class _PosScreenState extends State<PosScreen> {
                                                   labelText: 'Quantity',
                                                   hintText:
                                                       'e.g. 123 or 123.45',
-                                                  prefixIcon:
-                                                      Icon(Icons.add),
+                                                  prefixIcon: Icon(Icons.add),
                                                   filled: true,
                                                   fillColor:
                                                       const Color.fromARGB(
@@ -386,63 +385,39 @@ class _PosScreenState extends State<PosScreen> {
                           ),
                           Expanded(
                             child: Container(
-                              margin: EdgeInsets.fromLTRB(5, 10, 5, 5),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border.all(
-                                    color: const Color.fromARGB(
-                                        255, 188, 225, 255),
-                                    style: BorderStyle.solid,
-                                    width: 1),
-                                borderRadius: BorderRadius.circular(10),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.5),
-                                    spreadRadius: 2,
-                                    blurRadius: 5,
-                                    offset: Offset(
-                                        0, 3), // changes position of shadow
+                                margin: EdgeInsets.fromLTRB(5, 10, 5, 5),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  border: Border.all(
+                                      color: const Color.fromARGB(
+                                          255, 188, 225, 255),
+                                      style: BorderStyle.solid,
+                                      width: 1),
+                                  borderRadius: BorderRadius.circular(10),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.5),
+                                      spreadRadius: 2,
+                                      blurRadius: 5,
+                                      offset: Offset(
+                                          0, 3), // changes position of shadow
+                                    ),
+                                  ],
+                                ),
+                                child: Container(
+                                  child: GridView.builder(
+                                    gridDelegate:
+                                        SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 5,
+                                      childAspectRatio: 0.82,
+                                    ),
+                                    itemCount: 20,
+                                    
+                                    itemBuilder: (context,index) {
+                                      return productBox;
+                                    },
                                   ),
-                                ],
-                              ),
-                              child: Container(
-                              child: SingleChildScrollView(
-                                child: Column(
-                                children: [
-                                  Row(
-                                    children: [
-                                      ProductBox(),
-                                      ProductBox(),
-                                      ProductBox(),
-                                      ProductBox(),
-                                      ProductBox(),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      ProductBox(),
-                                      ProductBox(),
-                                      ProductBox(),
-                                      ProductBox(),
-                                      ProductBox(),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      ProductBox(),
-                                      ProductBox(),
-                                      ProductBox(),
-                                      ProductBox(),
-                                      ProductBox(),
-                                    ],
-                                  )
-
-
-                                ],
-                              ),
-                              ),
-                              )
-                            ),
+                                )),
                           )
                         ],
                       )),

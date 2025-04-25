@@ -145,17 +145,9 @@ class _CartState extends State<Cart> {
 }
 
 
-class ProductBox extends StatefulWidget {
-  const ProductBox({super.key});
 
-  @override
-  State<ProductBox> createState() => _ProductBoxState();
-}
 
-class _ProductBoxState extends State<ProductBox> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
+var productBox  = Container(
       height:170,
       width: 140,
       margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
@@ -205,5 +197,3 @@ class _ProductBoxState extends State<ProductBox> {
         ],
       ),
     );
-  }
-}
